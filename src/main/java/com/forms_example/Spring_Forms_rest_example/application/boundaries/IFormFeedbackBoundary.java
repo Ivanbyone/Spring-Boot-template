@@ -5,6 +5,6 @@ import com.forms_example.Spring_Forms_rest_example.application.common.dto.output
 import com.forms_example.Spring_Forms_rest_example.application.common.dto.output.FormWithStatusResponse;
 
 public interface IFormFeedbackBoundary {
-    FeedbackFormResponse postForm(FeedbackFormRequest form);
-    FormWithStatusResponse getForm(String id);
+    FeedbackFormResponse postForm(FeedbackFormRequest form) throws Exception;
+    FormWithStatusResponse getForm(String id) throws Exception;
 }
