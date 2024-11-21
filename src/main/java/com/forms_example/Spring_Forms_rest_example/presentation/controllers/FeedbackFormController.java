@@ -35,6 +35,8 @@ public class FeedbackFormController {
     @GetMapping(value = "/{id}")
     @ApiResponse(responseCode = "404", content = @Content(
             schema = @Schema(implementation = FormNotFound.class)))
+    @ApiResponse(responseCode = "500", content = @Content(
+            schema = @Schema(implementation = InternalServerError.class)))
     public FormWithStatusResponse GetFeedbackForm(@PathVariable String id) throws Exception {
         return this.formFeedbackBoundary.getForm(id);
     }
