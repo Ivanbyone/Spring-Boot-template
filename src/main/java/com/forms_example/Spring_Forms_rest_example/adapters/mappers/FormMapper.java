@@ -38,19 +38,19 @@ public class FormMapper {
     }
 
     public static IFeedbackForm get(Document doc) {
-        return new FeedbackForm(
-                doc.get("formId").toString(),
-                doc.get("category").toString(),
-                doc.get("surname").toString(),
-                doc.get("name").toString(),
-                doc.get("age").toString(),
-                doc.get("city").toString(),
-                doc.get("email").toString(),
-                doc.get("phoneNumber").toString(),
-                doc.get("salary").toString(),
-                doc.get("GitHubUrl").toString(),
-                formatDateTime(doc.get("createdDate").toString()),
-                doc.get("status").toString()
-        );
+            return new FeedbackForm(
+                    doc.get("formId").toString(),
+                    doc.get("category").toString(),
+                    doc.get("surname").toString(),
+                    doc.get("name").toString(),
+                    doc.get("age").toString(),
+                    doc.get("city").toString(),
+                    doc.get("email").toString(),
+                    doc.get("phoneNumber").toString(),
+                    doc.get("salary").toString(),
+                    doc.get("GitHubUrl").toString(),
+                    formatDateTime(doc.get("createdDate").toString()),
+                    doc.get("status").toString()
+            );
     }
 }

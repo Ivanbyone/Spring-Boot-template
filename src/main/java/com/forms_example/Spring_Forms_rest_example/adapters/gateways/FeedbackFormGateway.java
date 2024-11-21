@@ -27,6 +27,9 @@ public class FeedbackFormGateway extends MongoConnection implements IFeedbackFor
     @Override
     public IFeedbackForm getForm(String id) {
         Document mapper = collection.find(eq("formId", id)).first();
+        if (mapper == null) {
+            return null;
+        }
         return FormMapper.get(mapper);
     }
 }

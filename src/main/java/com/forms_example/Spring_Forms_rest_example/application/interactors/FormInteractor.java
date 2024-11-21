@@ -58,10 +58,8 @@ public class FormInteractor implements IFormFeedbackBoundary {
     }
 
     public FormWithStatusResponse getForm(String id) throws Exception {
-        IFeedbackForm form = null;
-        try {
-            form = this.gateway.getForm(id);
-        } catch (Exception e) {
+        IFeedbackForm form = this.gateway.getForm(id);
+        if (form == null) {
             presenter.registerFormNotFoundError();
         }
         return presenter.registerSuccessView(form);
